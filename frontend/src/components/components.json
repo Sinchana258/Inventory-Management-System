@@ -1,0 +1,5 @@
+{
+    "componentPath": "./src/components",
+    "baseColor": "zinc",
+    "framework": "react"
+}
