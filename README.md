@@ -32,7 +32,7 @@ A full-stack web application designed to help small businesses manage their prod
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/Inventory-Management-System.git
+git clone https://github.com/Sinchana258/Inventory-Management-System.git
 cd Inventory-Management-System
 
 ```
