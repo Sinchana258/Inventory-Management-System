@@ -53,7 +53,7 @@ npm start              # Starts React app on port 3000
 # Environment Variables (.env)
 Refer to backend/.env.example for all required environment variables.
 
-## TODO
+## ✅TODO
  -Admin Login & JWT Authentication
 
  -Add Role-based Access (Admin, Seller, Buyer)
@@ -63,7 +63,6 @@ Refer to backend/.env.example for all required environment variables.
  -Deploy backend & frontend
 
 ---
-
 #👨‍💻Author
 Sinchana T
 GitHub: @Sinchana258
