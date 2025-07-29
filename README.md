@@ -63,7 +63,7 @@ Refer to backend/.env.example for all required environment variables.
  -Deploy backend & frontend
 
 ---
-#👨‍💻Author
+# 👨‍💻Author
 Sinchana T
 GitHub: @Sinchana258
 
