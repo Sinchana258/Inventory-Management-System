@@ -36,16 +36,14 @@ git clone https://github.com/Sinchana258/Inventory-Management-System.git
 cd Inventory-Management-System
 
 ```
-
-#Backend Setup:
+### 2. Backend Setup:
 ```bash
 cd backend
 npm install
 cp .env.example .env   # Update with your DB and Email config
 npm start              # Starts backend server on port 5000
 ```
-
-#Frontend Setup:
+### 3. Frontend Setup:
 ```bash
 cd ../frontend
 npm install
