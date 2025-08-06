@@ -17,24 +17,8 @@ const SalesList = () => {
             });
     }, []);
 
-    // CSV headers
-    // const headers = [
-    //     { label: "ID", key: "id" },
-    //     { label: "Name", resolve: (row) => row.Product?.name || '❓' },
-    //     { label: "Category", resolve: (row) => row.Product?.category || '-' },
-    //     { label: "Unit Price", resolve: (row) => row.Product?.price || '-' },
-    //     { label: "Quantity", key: "quantity" },
-    //     { label: "Total Price", key: "totalPrice" },
-    //     { label: "Date", resolve: (row) => new Date(row.createdAt).toLocaleString() },
-    // ];
-
     return (
         <div>
-            {/* <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold">Sales Tracker</h3>
-                <CSVExportButton data={sales} headers={headers} filename="all_sales.csv" />
-            </div> */}
-
             {sales.length === 0 ? (
                 <p>No sales found.</p>
             ) : (

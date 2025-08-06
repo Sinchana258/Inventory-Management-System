@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import RecordSaleForm from "../components/RecordSaleForm";
-import SalesList from "../components/SalesList";
+import RecordSaleForm from "../../components/RecordSaleForm";
+import SalesList from "../../components/SalesList";
 // import CSVExportButton from "../components/ExportButton";
 import { TrendingUp } from "lucide-react";
 

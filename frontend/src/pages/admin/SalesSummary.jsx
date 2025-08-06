@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent } from "../components/ui/card";
-import { SalesChart, SalesWeeklyChart } from "../components/SalesChart";
-import CSVExportButton from "../components/ExportButton";
+import { Card, CardContent } from "../../components/ui/card";
+import { SalesChart, SalesWeeklyChart } from "../../components/SalesChart";
+import CSVExportButton from "../../components/ExportButton";
 import { BarChart3, IndianRupee, PackageSearch, ShoppingCart } from "lucide-react";
 
 const SalesSummary = () => {

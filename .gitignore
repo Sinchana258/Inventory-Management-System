@@ -15,8 +15,8 @@ coverage/
 # === Environment variables ===
 .env
 .env.*
-**/.env
-**/.env.*
+!backend/.env.example
+
 
 # === Logs ===
 *.log

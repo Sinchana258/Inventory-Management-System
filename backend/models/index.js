@@ -14,15 +14,22 @@ const sequelize = new Sequelize(
 // Model factories:
 const ProductModel = require('./Product');
 const SaleModel = require('./Sale');
+const UserModel = require('./User');  
 
+// Initialize models:
 const Product = ProductModel(sequelize, Sequelize.DataTypes);
 const Sale = SaleModel(sequelize, Sequelize.DataTypes);
+const User = UserModel(sequelize, Sequelize.DataTypes); 
+
 // Associations:
 Product.hasMany(Sale, { foreignKey: 'productId' });
 Sale.belongsTo(Product, { foreignKey: 'productId' });
 
+// Export models and sequelize:
 module.exports = {
     sequelize,
+    Sequelize,
     Product,
     Sale,
+    User,
 };
