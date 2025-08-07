@@ -35,18 +35,18 @@ const RecordSaleForm = ({ onSuccess }) => {
             });
 
             if (response.ok) {
-                toast.success("✅ Sale recorded successfully!");
+                toast.success(" Sale recorded successfully!");
                 setProductId('');
                 setQuantity('');
                 const today = new Date().toISOString().split('T')[0];
                 setDate(today);
                 if (onSuccess) onSuccess();
             } else {
-                toast.error("❌ Failed to record sale.");
+                toast.error(" Failed to record sale.");
             }
         } catch (err) {
             console.error(err);
-            toast.error("❌ Error recording sale.");
+            toast.error(" Error recording sale.");
         }
     };
 
@@ -56,7 +56,7 @@ const RecordSaleForm = ({ onSuccess }) => {
             className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-md"
         >
             <h3 className="text-xl font-semibold flex items-center gap-2 text-gray-800">
-                <ShoppingCart className="text-purple-600" size={22} />
+                <ShoppingCart className="text-blue-700" size={22} />
                 Record a Sale
             </h3>
 
@@ -66,7 +66,7 @@ const RecordSaleForm = ({ onSuccess }) => {
                     <select
                         value={productId}
                         onChange={(e) => setProductId(e.target.value)}
-                        className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-700"
                         required
                     >
                         <option value="">-- Select Product --</option>
@@ -89,7 +89,7 @@ const RecordSaleForm = ({ onSuccess }) => {
                         placeholder="Enter quantity"
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)}
-                        className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-700"
                         required
                         min={1}
                     />
@@ -112,7 +112,7 @@ const RecordSaleForm = ({ onSuccess }) => {
             <div className="pt-4">
                 <button
                     type="submit"
-                    className="bg-purple-600 text-white font-medium px-6 py-2 rounded-lg shadow hover:bg-purple-700 transition-all duration-200"
+                    className="bg-blue-700 text-white font-medium px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition-all duration-200"
                 >
                     <PackageCheck className="inline-block mr-2" size={18} />
                     Record Sale
@@ -123,3 +123,4 @@ const RecordSaleForm = ({ onSuccess }) => {
 };
 
 export default RecordSaleForm;
+

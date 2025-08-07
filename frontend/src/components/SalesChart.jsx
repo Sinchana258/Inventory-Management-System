@@ -25,7 +25,7 @@ export const SalesChart = () => {
                 }));
                 setData(chartData);
             })
-            .catch(err => console.error('❌ Error loading chart data:', err));
+            .catch(err => console.error(' Error loading chart data:', err));
     }, []);
 
     return (
@@ -71,7 +71,7 @@ export const SalesWeeklyChart = () => {
                 }));
                 setWeeklyData(formatted);
             })
-            .catch(err => console.error('❌ Error loading weekly sales chart:', err));
+            .catch(err => console.error(' Error loading weekly sales chart:', err));
     }, []);
 
     return (

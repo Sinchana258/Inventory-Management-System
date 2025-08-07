@@ -1,34 +1,22 @@
-import React, { useEffect, useState } from 'react';
+// ProductList.jsx
+import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const ProductList = () => {
-    const [products, setProducts] = useState([]);
+const ProductList = ({ products, fetchProducts }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [categoryFilter, setCategoryFilter] = useState('');
     const [sortBy, setSortBy] = useState('');
     const [sortAsc, setSortAsc] = useState(true);
     const [editingProduct, setEditingProduct] = useState(null);
-    useEffect(() => {
-        fetchProducts();
-    }, []);
-
-    const fetchProducts = async () => {
-        try {
-            const res = await axios.get('http://localhost:5000/api/products');
-            setProducts(res.data);
-        } catch (err) {
-            toast.error("Failed to fetch products");
-        }
-    };
 
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure to delete this product?")) return;
 
         try {
             await axios.delete(`http://localhost:5000/api/products/${id}`);
-            setProducts(products.filter(p => p.id !== id));
             toast.success("Product deleted successfully");
+            fetchProducts();
         } catch (err) {
             toast.error("Error deleting product");
         }

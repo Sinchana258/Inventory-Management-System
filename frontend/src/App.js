@@ -1,14 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import ProtectedRoute from "./components/Layout/ProtectedRoute";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Layout
 import DashboardLayout from "./components/DashBoardLayout";
 
 // Common
 import HomePage from "./pages/common/HomePage";
-import LoginForm from "./pages/common/LoginForm";
-import RegisterForm from "./pages/common/RegisterForm";
+import LoginPage from "./pages/auth/LoginPage";
+import RegisterPage from "./pages/auth/RegisterPage";
+import About from './pages/common/About';
+import Contact from './pages/common/Contact';
+import ForgotPassword from './pages/common/ForgotPassword';
 
 // Admin Pages
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -24,7 +29,6 @@ import SellerSales from "./pages/seller/SalesPage";
 import SellerSummary from "./pages/seller/SalesSummary";
 
 // Buyer Pages
-// import BuyerDashboard from "./pages/buyer/BuyerDashboard";
 import BuyerProducts from "./pages/buyer/ProductsPage";
 
 const App = () => {
@@ -32,11 +36,26 @@ const App = () => {
 
   return (
     <Router>
+      {/* ✅ Toast Container should be outside Routes but inside Router */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
+
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* Admin Protected Routes */}
         <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
@@ -62,7 +81,6 @@ const App = () => {
         {/* Buyer Protected Routes */}
         <Route element={<ProtectedRoute allowedRoles={["buyer"]} />}>
           <Route element={<DashboardLayout />}>
-            {/* <Route path="/buyer/dashboard" element={<BuyerDashboard />} /> */}
             <Route path="/buyer/products" element={<BuyerProducts />} />
           </Route>
         </Route>

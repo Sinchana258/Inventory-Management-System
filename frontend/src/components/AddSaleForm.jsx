@@ -1,77 +1,77 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const AddSaleForm = () => {
-    const [products, setProducts] = useState([]);
-    const [selectedProductId, setSelectedProductId] = useState('');
-    const [quantity, setQuantity] = useState(1);
+const AddSaleForm = ({ onSaleAdded }) => {
+    const [formData, setFormData] = useState({
+        productId: "",
+        quantitySold: 1,
+        price: ""
+    });
 
-    useEffect(() => {
-        fetch('http://localhost:5000/api/products')
-            .then((res) => res.json())
-            .then((data) => setProducts(data))
-            .catch((err) => console.error("❌ Failed to fetch products", err));
-    }, []);
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-    const handleSale = async () => {
-        if (!selectedProductId || quantity <= 0) {
-            toast.warn("⚠️ Select a product and valid quantity");
-            return;
-        }
-
-        const selectedProduct = products.find(p => p.id === parseInt(selectedProductId));
-        const totalPrice = selectedProduct.price * quantity;
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
-            const res = await fetch('http://localhost:5000/api/sales', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    productId: selectedProduct.id,
-                    quantity,
-                    totalPrice
-                })
-            });
-
-            if (res.ok) {
-                toast.success(" Sale recorded!");
-                setSelectedProductId('');
-                setQuantity(1);
-            } else {
-                toast.error("Failed to record sale");
-            }
+            const res = await axios.post("http://localhost:5000/api/sales", formData);
+            toast.success("Sale recorded!");
+            setFormData({ productId: "", quantitySold: 1, price: "" });
+            onSaleAdded(); // Trigger update
         } catch (err) {
-            console.error(err);
-            toast.error(" Error recording sale");
+            toast.error("Failed to record sale");
         }
     };
 
     return (
-        <div>
-            <h2>🛒 Add Sale</h2>
-
-            <select value={selectedProductId} onChange={(e) => setSelectedProductId(e.target.value)}>
-                <option value="">Select product</option>
-                {products.map((p) => (
-                    <option key={p.id} value={p.id}>
-                        {p.name} ({p.category}) - ₹{p.price}
-                    </option>
-                ))}
-            </select>
-
-            <input
-                type="number"
-                placeholder="Quantity"
-                min="1"
-                value={quantity}
-                onChange={(e) => setQuantity(Number(e.target.value))}
-                style={{ marginLeft: '10px', width: '60px' }}
-            />
-
-            <button onClick={handleSale} style={{ marginLeft: '10px' }}>
-                💾 Record Sale
+        <form
+            onSubmit={handleSubmit}
+            className="bg-white shadow p-4 rounded-md mb-4 max-w-xl mx-auto"
+        >
+            <h2 className="text-xl font-semibold mb-4">Add Sale</h2>
+            <div className="mb-3">
+                <label className="block mb-1">Product ID</label>
+                <input
+                    type="text"
+                    name="productId"
+                    value={formData.productId}
+                    onChange={handleChange}
+                    className="w-full border px-2 py-1 rounded"
+                    required
+                />
+            </div>
+            <div className="mb-3">
+                <label className="block mb-1">Quantity Sold</label>
+                <input
+                    type="number"
+                    name="quantitySold"
+                    value={formData.quantitySold}
+                    onChange={handleChange}
+                    className="w-full border px-2 py-1 rounded"
+                    min="1"
+                    required
+                />
+            </div>
+            <div className="mb-3">
+                <label className="block mb-1">Price</label>
+                <input
+                    type="number"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleChange}
+                    className="w-full border px-2 py-1 rounded"
+                    required
+                />
+            </div>
+            <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            >
+                Record Sale
             </button>
-        </div>
+        </form>
     );
 };
 
