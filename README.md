@@ -54,9 +54,6 @@ npm start              # Starts React app on port 3000
 Refer to backend/.env.example for all required environment variables.
 
 ## TODO
- -Admin Login & JWT Authentication
-
- -Add Role-based Access (Admin, Seller, Buyer)
 
  -Dockerize the project
 
