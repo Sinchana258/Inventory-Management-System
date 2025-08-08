@@ -24,7 +24,7 @@ const HomePage = () => {
 
                     <Link
                         to="/register"
-                        className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 transition-transform transform hover:scale-105 font-semibold"
+                        className="inline-block bg-blue-900 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 transition-transform transform hover:scale-105 font-semibold"
                     >
                         Get Started Free
                     </Link>

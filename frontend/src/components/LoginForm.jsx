@@ -20,7 +20,8 @@ const LoginForm = () => {
                 password,
             });
             const userData = res.data.user;
-            login(userData);
+            const token = res.data.token;
+            login(userData, token);
             toast.success('Login successful!');
 
             const role = userData?.role;
@@ -36,7 +37,7 @@ const LoginForm = () => {
     return (
         <div className="min-h-[80vh] flex items-center justify-center bg-gray-100">
             <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-                <h2 className="text-3xl font-bold text-center text-blue-800 mb-4">Sign In</h2>
+                <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">Sign In</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
 
                     <div className="mb-4">
@@ -78,14 +79,14 @@ const LoginForm = () => {
 
                     <button
                         type="submit"
-                        className="w-full bg-blue-800 text-white py-3 rounded-full font-bold text-lg hover:bg-blue-800 transition"
+                        className="w-full bg-blue-900 text-white py-3 rounded-full font-bold text-lg hover:bg-blue-800 transition"
                     >
                         LOGIN
                     </button>
                 </form>
 
                 <p className="mt-4 text-center text-sm text-gray-600">
-                    Don’t have an account? <a href="/register" className="text-blue-600 hover:underline">Register here</a>
+                    Don’t have an account? <a href="/register" className="text-blue-800 hover:underline">Register here</a>
                 </p>
             </div>
         </div>

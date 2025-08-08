@@ -7,7 +7,7 @@ const Contact = () => {
         <PublicLayout>
             <div className="flex flex-col min-h-[80vh] bg-gray-50 px-4 py-12">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-center text-blue-800 mb-10">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-center text-blue-900 mb-10">
                         Contact Us
                     </h1>
 
@@ -53,7 +53,7 @@ const Contact = () => {
 
                             <button
                                 type="submit"
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg md:col-span-2 transition-all duration-200"
+                                className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg md:col-span-2 transition-all duration-200"
                             >
                                 Send Message
                             </button>

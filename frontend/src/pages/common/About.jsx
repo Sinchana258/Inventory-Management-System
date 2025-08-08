@@ -7,7 +7,7 @@ const About = () => {
             <div className="flex flex-col min-h-[80vh] bg-gray-50 px-6 py-12">
                 {/* Page Header */}
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl font-bold text-blue-800 mb-6">About Our Platform</h1>
+                    <h1 className="text-4xl font-bold text-blue-900 mb-6">About Our Platform</h1>
                     <p className="text-gray-600 text-lg mb-8">
                         Our Inventory and Sales Management System is built to empower small businesses, vendors, and buyers by offering a seamless and efficient platform for managing product inventories, tracking sales, and analyzing business performance.
                     </p>
@@ -39,7 +39,7 @@ const About = () => {
 
                 {/* Mission Section */}
                 <div className="max-w-4xl mx-auto text-center mt-12 flex-1">
-                    <h2 className="text-2xl font-bold text-blue-800 mb-4">Our Mission</h2>
+                    <h2 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h2>
                     <p className="text-gray-600 text-lg">
                         We aim to simplify inventory and sales tracking for businesses of all sizes by providing a cloud-enabled, secure, and user-friendly solution. Our system reduces manual workload, increases efficiency, and helps you make data-driven decisions.
                     </p>

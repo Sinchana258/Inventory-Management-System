@@ -6,7 +6,7 @@ const PublicLayout = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">
             {/* Header */}
-            <header className="bg-blue-700 text-white py-4 shadow-md">
+            <header className="bg-blue-900 text-white py-4 shadow-md">
                 <div className="container mx-auto px-6 flex flex-wrap justify-between items-center">
                     <h1 className="text-4xl font-bold mb-2 md:mb-0">Inventory And Sales Management System</h1>
                     <nav className="space-x-5 md:space-x-12">
@@ -20,7 +20,7 @@ const PublicLayout = ({ children }) => {
                             <Link
                                 key={link.to}
                                 to={link.to}
-                                className="inline-block bg-white text-blue-800 px-5 py-3 rounded hover:bg-blue-200 font-medium transition duration-200"
+                                className="inline-block bg-white text-blue-900 px-5 py-3 rounded hover:bg-blue-300 font-medium transition duration-200"
                             >
                                 {link.label}
                             </Link>
@@ -35,7 +35,7 @@ const PublicLayout = ({ children }) => {
             </main>
 
             {/* Footer */}
-            <footer className="bg-blue-700 text-white text-center py-6 text-sm">
+            <footer className="bg-blue-900 text-white text-center py-6 text-sm">
                 &copy; {new Date().getFullYear()} InventorySys. All rights reserved.
             </footer>
         </div>

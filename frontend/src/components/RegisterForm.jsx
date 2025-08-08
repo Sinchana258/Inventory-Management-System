@@ -38,7 +38,7 @@ const RegisterForm = () => {
     return (
         <div className="min-h-[80vh] flex items-center justify-center bg-gray-100">
             <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-                <h2 className="text-3xl font-bold text-center text-blue-800 mb-4">Sign Up</h2>
+                <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">Sign Up</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
 
                     <div className="mb-4">
@@ -120,14 +120,14 @@ const RegisterForm = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-blue-800 text-white py-3 rounded-full font-bold text-lg hover:bg-blue-800 transition"
+                        className="w-full bg-blue-900 text-white py-3 rounded-full font-bold text-lg hover:bg-blue-800 transition"
                     >
                         REGISTER
                     </button>
                 </form>
 
                 <p className="mt-4 text-center text-sm text-gray-600">
-                    Already have an account? <a href="/login" className="text-blue-600 hover:underline">Login here</a>
+                    Already have an account? <a href="/login" className="text-blue-700 hover:underline">Login here</a>
                 </p>
             </div>
         </div>
