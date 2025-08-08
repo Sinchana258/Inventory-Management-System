@@ -12,18 +12,23 @@ A full-stack web application designed to help small businesses manage their prod
 -  Export sales data as csv file
 -  Sales analytics dashboard with charts
 -  Clean UI built with React + Tailwind CSS
+-  Secure authentication & role-based access (Admin, Seller, Buyer)
 -  REST API built with Node.js and Express
 -  MySQL database using Sequelize ORM
+-  Product search & sorting for faster navigation
 
 ---
 
 ##  Screenshots
-<img width="1919" height="967" alt="image" src="https://github.com/user-attachments/assets/33355c86-17a9-4b85-9f5a-bbe2c775f311" />
-<img width="1890" height="973" alt="image" src="https://github.com/user-attachments/assets/1a0dc51c-73c8-4449-855d-e040a1fb377c" />
-<img width="1882" height="895" alt="image" src="https://github.com/user-attachments/assets/256aaeec-d397-420f-8507-482be2aba844" />
-<img width="1906" height="977" alt="image" src="https://github.com/user-attachments/assets/823476df-4ebd-46b0-8ea3-e4aab129d1b2" />
-<img width="1916" height="965" alt="image" src="https://github.com/user-attachments/assets/dc9a567f-62cd-4f44-9dff-ffe8b0272cbc" />
-
+<img width="1896" height="1011" alt="image" src="https://github.com/user-attachments/assets/3ee10367-2b63-4b87-bcdb-ac3288b33048" />
+<img width="1913" height="1015" alt="image" src="https://github.com/user-attachments/assets/ea275edc-8b35-47be-928d-6455b7972b1a" />
+<img width="1907" height="925" alt="image" src="https://github.com/user-attachments/assets/87215b8c-292c-4ce9-b984-94fcf3eecc62" />
+<img width="1896" height="930" alt="image" src="https://github.com/user-attachments/assets/b6666143-b993-48a8-b0c3-49fb5fa8bea5" />
+<img width="1910" height="922" alt="image" src="https://github.com/user-attachments/assets/e28d1a8e-b2cd-4bd9-a880-64b6e20d892f" />
+<img width="1912" height="929" alt="image" src="https://github.com/user-attachments/assets/f2728520-2619-4303-b5cd-6637a2be1353" />
+<img width="1912" height="930" alt="image" src="https://github.com/user-attachments/assets/d507b901-7a25-4918-bf3e-c9c36a4955ed" />
+<img width="1914" height="974" alt="image" src="https://github.com/user-attachments/assets/dcaf27b4-20b1-4f34-bb42-f854a1b87c68" />
+<img width="1876" height="964" alt="image" src="https://github.com/user-attachments/assets/c96642b2-a3f6-4d79-96ad-5c65a5660432" />
 
 ---
 
