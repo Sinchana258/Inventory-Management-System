@@ -15,7 +15,7 @@ const SalesSummary = () => {
         fetch("http://localhost:5000/api/sales/summary")
             .then((res) => res.json())
             .then((data) => setSalesData(data))
-            .catch((err) => console.error("❌ Failed to fetch sales summary:", err));
+            .catch((err) => console.error(" Failed to fetch sales summary:", err));
     }, []);
 
     const summaryHeaders = [
