@@ -29,7 +29,7 @@ const CSVExportButton = ({ data, headers, filename }) => {
             onClick={downloadCSV}
             className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded text-sm shadow"
         >
-            ⬇️ Export Summary CSV
+             Export Summary CSV
         </button>
     );
 };
