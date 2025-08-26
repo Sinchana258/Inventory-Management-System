@@ -12,7 +12,7 @@ router.get('/summary', async (req, res) => {
 
         res.json({ products, lowStock, sales, revenue });
     } catch (err) {
-        console.error('❌ Dashboard summary error:', err);
+        console.error(' Dashboard summary error:', err);
         res.status(500).json({ error: 'Failed to fetch dashboard summary' });
     }
 });
