@@ -9,7 +9,7 @@ const recordSale = async (req, res) => {
     try {
         const { productId, quantity, date } = req.body;
 
-        console.log(" Incoming sale POST data:", req.body);
+        // console.log(" Incoming sale POST data:", req.body);
 
         if (
             productId === undefined || quantity === undefined ||
@@ -45,7 +45,7 @@ const recordSale = async (req, res) => {
 
         res.status(201).json({ newSale });
     } catch (err) {
-        console.error('❌ Error recording sale:', err);
+        console.error(' Error recording sale:', err);
         res.status(500).json({ error: 'Failed to record sale' });
     }
 };
@@ -82,16 +82,16 @@ const sendLowStockEmail = async (productName, quantity) => {
         const mailOptions = {
             from: `"Inventory Alert" <${process.env.EMAIL_USER}>`,
             to: process.env.EMAIL_USER, // or use a list if you want to notify more people
-            subject: `⚠️ Low Stock Alert: ${productName}`,
+            subject: `⚠ Low Stock Alert: ${productName}`,
             text: `The product "${productName}" is running low. Only ${quantity} left in stock.`,
         };
 
         await transporter.sendMail(mailOptions);
         alert("mail sent for low stock");
-        console.log(`📧 Low stock email sent for ${productName}`);
+        console.log(` Low stock email sent for ${productName}`);
 
     } catch (error) {
-        console.error('❌ Failed to send email:', error);
+        console.error(' Failed to send email:', error);
     }
 };
 
@@ -162,7 +162,7 @@ const exportSalesAsCSV = async (req, res) => {
         res.attachment('sales_data.csv');
         return res.send(csv);
     } catch (err) {
-        console.error('❌ Error exporting CSV:', err);
+        console.error(' Error exporting CSV:', err);
         res.status(500).json({ error: 'Failed to export sales data as CSV.' });
     }
 };
