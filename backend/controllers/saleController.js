@@ -9,7 +9,7 @@ const recordSale = async (req, res) => {
     try {
         const { productId, quantity, date } = req.body;
 
-        console.log("📥 Incoming sale POST data:", req.body);
+        console.log(" Incoming sale POST data:", req.body);
 
         if (
             productId === undefined || quantity === undefined ||
